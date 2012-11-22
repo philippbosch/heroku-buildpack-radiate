@@ -99,6 +99,13 @@ function package_download() {
   curl $package -s -o - | tar xzf - -C $location
 }
 
+# Radiate-specific stuff:
+
+git clone git://github.com/philippbosch/radiate.git $1/radiate | indent
+mv $1/radiate/* $1
+
+# Done with Radiate.
+
 bootstrap_node=$(mktmpdir bootstrap_node)
 package_download "nodejs" "0.4.7" $bootstrap_node
 

@@ -5,4 +5,9 @@ cat <<EOF
 ---
 config_vars:
   PATH: bin:node_modules/.bin:/usr/local/bin:/usr/bin:/bin
+addons:
+  - pusher:sandbox
+  - redistogo:nano
+default_process_types:
+  web: bin/node web.js
 EOF
