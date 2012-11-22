@@ -101,6 +101,7 @@ function package_download() {
 
 # Radiate-specific stuff:
 
+echo "-----> Getting Radiate source code"
 git clone git://github.com/philippbosch/radiate.git $1/radiate | indent
 mv $1/radiate/* $1
 
